@@ -83,6 +83,13 @@ selector | `string` | Yes | CSS selector of the search field.
 delay | `integer` | No | The keyup event on the search field is debounced. This attribute will set the fire rate limit (in milliseconds) on the keyup event callback. Default: `200`
 showWords | `boolean` | No | Enable/disable revealing of the words list panel. Can be useful if you want to show the suggested words on your own custom widget. Default: `true`
 hideOnblur | `boolean` | No | Indicates whether the words list panel should hide when the search field loses focus. Default: `true`
+locale | `string` | No | Indicates whether the locale (language) that we want to return data from, should be used in combination with `mkt` below. Default: `en_US`
+mkt | `int` | No | Magic value that defines, along with locale, from what language we should return our results. Default: `1`
+
+
+### How to find mkt
+Go to the amazon domain on your country. Open the network tab on chrome dev tools (or similar) and start typing on the amazon search bar. You will see the entire request parameters.
+
 
 ### Events
 Each AmazonAutocomplete instance will fire some events. You can susbscribe to these events to, for example, save the selected word in your DB or to show suggested words in your own widget.
@@ -101,7 +108,9 @@ let searchInput = new AmazonAutocomplete({
             selector: '#search-input',
             delay: 200,
             showWords: false,
-            hideOnblur: false
+            hideOnblur: false,
+            locale: 'pt_BR',
+            mkt: 526970
         });
 
 //Log the selected word to the console
