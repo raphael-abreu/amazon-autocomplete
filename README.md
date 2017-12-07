@@ -83,7 +83,7 @@ selector | `string` | Yes | CSS selector of the search field.
 delay | `integer` | No | The keyup event on the search field is debounced. This attribute will set the fire rate limit (in milliseconds) on the keyup event callback. Default: `200`
 showWords | `boolean` | No | Enable/disable revealing of the words list panel. Can be useful if you want to show the suggested words on your own custom widget. Default: `true`
 hideOnblur | `boolean` | No | Indicates whether the words list panel should hide when the search field loses focus. Default: `true`
-locale | `string` | No | Indicates whether the locale (language) that we want to return data from, should be used in combination with `mkt` below. Default: `en_US`
+locale | `string` | No | Indicates the locale (language) that we want to return results from. This should be used in combination with `mkt` below. Default: `en_US`
 mkt | `int` | No | Magic value that defines, along with locale, from what language we should return our results. Default: `1`
 
 
