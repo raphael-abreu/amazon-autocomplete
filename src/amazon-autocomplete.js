@@ -26,7 +26,7 @@
             delay: 150,
             showWords: true,
             hideOnblur: true,
-            locale:    en_US,
+            locale:    'en_US',
             mkt:       1
         }
         let args = arguments[0];
