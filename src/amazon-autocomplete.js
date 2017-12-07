@@ -25,7 +25,9 @@
         self._config = {
             delay: 150,
             showWords: true,
-            hideOnblur: true
+            hideOnblur: true,
+            locale:    en_US,
+            mkt:       1
         }
         let args = arguments[0];
         if (args && typeof args === 'string'){
@@ -308,7 +310,7 @@
     function _getSuggestions(prefix) {
         let scriptContainer = document.getElementById('ac__script');
         let newScript = document.createElement('script');
-        newScript.src = 'http://completion.amazon.com/search/complete?search-alias=aps&client=amazon-search-ui&mkt=1&q='+prefix+'&callback=AmazonAutocomplete.AmazonJSONPCallbackHandler_'+this._id;
+        newScript.src = 'http://completion.amazon.com/search/complete?search-alias=aps&client=amazon-search-ui&mkt='+this._config.mkt+'&l='+this._config.locale+'&q='+prefix+'&callback=AmazonAutocomplete.AmazonJSONPCallbackHandler_'+this._id;
         scriptContainer.replaceChild(newScript, scriptContainer.firstChild);
     }
 
