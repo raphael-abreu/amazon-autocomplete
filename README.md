@@ -88,7 +88,7 @@ mkt | `int` | No | Magic value that defines, along with locale, from what langua
 
 
 ### How to find mkt
-Go to the amazon domain on your country. Open the network tab on chrome dev tools (or similar) and start typing on the amazon search bar. You will see the entire request parameters.
+Go to the amazon domain on your country. Open the network tab on chrome dev tools (or similar) and start typing on the amazon search bar. You will see the entire request parameters and something as `&mkt=NUMBER`.
 
 
 ### Events
