@@ -87,8 +87,8 @@ locale | `string` | No | Indicates the locale (language) that we want to return 
 mkt | `int` | No | Magic value that defines, along with locale, from what language we should return our results. Default: `1`
 
 
-### How to find mkt
-Go to the amazon domain on your country. Open the network tab on chrome dev tools (or similar) and start typing on the amazon search bar. You will see the entire request parameters and something as `&mkt=NUMBER`.
+### How to find this `mkt` value?
+Go to the amazon domain on your country. Open the network tab on chrome dev tools (or similar) and start typing on the amazon search bar. You will see the entire request parameters and something as `&mkt=NUMBER`. Copy that number and pass it as option for this plugin.
 
 
 ### Events
@@ -100,7 +100,7 @@ onSelectedWord | `string` | This is event is fired when some of the following ac
 onNewWords | `array` | This is event is fired when there are new suggested words available. It mostly happens when the keyup event fires on the search field. Keep in mind that the keyup is debounced to improve performance.
 
 ### Advanced usage example
-The next snippet shows how to initialize a AmazonAutocomplete with a 200ms debounce limit, not showing the words panel and not hiding on input text blur. As the words won’t show in the dropdown panel we’ll have to shown them in a custom panel.
+The next snippet shows how to initialize a AmazonAutocomplete with a 200ms debounce limit, not showing the words panel and not hiding on input text blur. As the words won’t show in the dropdown panel we’ll have to shown them in a custom panel. In this example we also set the locale do pt_BR to show only portuguese products autocompletion.
 
 ```javascript
 //Create the AmazonAutocomplete with our desired properties
